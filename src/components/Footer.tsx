@@ -74,7 +74,6 @@ export default function Footer() {
                 {footerLinks.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
                       className="text-gray-300 hover:text-reinbou-coral transition-colors duration-300"
                     >
                       {link.name}
