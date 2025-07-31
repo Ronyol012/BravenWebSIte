@@ -7,46 +7,21 @@ export class ImageValidator {
   /**
    * Validates if a URL is a valid image URL
    */
-  static isValidImageUrl(url: string | null | undefined): boolean {
-    if (!url || typeof url !== 'string' || url.trim() === '') {
-      return false;
-    }
+static isValidImageUrl(url: string | null | undefined): boolean {
+  if (!url || typeof url !== 'string' || url.trim() === '') return false;
 
-    try {
-      const urlObj = new URL(url);
-      
-      // Check protocol
-      if (!this.VALID_PROTOCOLS.includes(urlObj.protocol)) {
-        console.warn(`❌ Invalid protocol: ${urlObj.protocol} for URL: ${url}`);
-        return false;
-      }
+  try {
+    const urlObj = new URL(url);
+    const protocolOk = this.VALID_PROTOCOLS.includes(urlObj.protocol);
+    const lengthOk = url.length <= this.MAX_URL_LENGTH;
 
-      // Check URL length
-      if (url.length > this.MAX_URL_LENGTH) {
-        console.warn(`❌ URL too long: ${url.length} characters`);
-        return false;
-      }
-
-      // Check if it looks like an image URL
-      const pathname = urlObj.pathname.toLowerCase();
-      const hasValidExtension = this.VALID_EXTENSIONS.some(ext => 
-        pathname.endsWith(ext)
-      );
-
-      // Allow URLs without extensions if they're from known image services
-      const isKnownImageService = this.isKnownImageService(urlObj.hostname);
-
-      if (!hasValidExtension && !isKnownImageService) {
-        console.warn(`❌ URL doesn't appear to be an image: ${url}`);
-        return false;
-      }
-
-      return true;
-    } catch (error) {
-      console.error(`❌ Invalid URL format: ${url}`, error);
-      return false;
-    }
+    // Permitir cualquier dominio si tiene protocolo válido y es corta
+    return protocolOk && lengthOk;
+  } catch (error) {
+    return false;
   }
+}
+
 
   /**
    * Checks if hostname is from a known image service
