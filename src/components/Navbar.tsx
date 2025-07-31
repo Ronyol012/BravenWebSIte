@@ -42,15 +42,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" onClick={handleNavClick}>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-3xl font-display font-bold text-reinbou-navy hover:text-reinbou-coral transition-colors cursor-pointer"
-            >
-              Reinbou
-            </motion.div>
-          </Link>
+            <Link to="/" onClick={handleNavClick}>
+              <motion.img
+                src="/data/sublogo.svg"
+                alt="Reinbou logo"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="h-10 w-auto cursor-pointer transition-opacity"
+              />
+            </Link>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
@@ -117,7 +118,7 @@ export default function Navbar() {
                 }`}
               >
                 {item.name}
-              </Link>
+              </Link> 
             ))}
           </div>
         </motion.div>
