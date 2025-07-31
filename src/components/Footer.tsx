@@ -35,7 +35,7 @@ export default function Footer() {
                 alt="Reinbou logo blanco"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="h-10 w-auto cursor-pointer transition-opacity"
+                className="h-9 w-auto cursor-pointer transition-opacity"
               />
               <p className="text-gray-300 mb-6 max-w-md">
                 Agencia creativa especializada en diseño con intención. 
