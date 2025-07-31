@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Palette, Globe, FileText, Share2 } from 'lucide-react';
+import { Palette, Globe, FileText, Figma } from 'lucide-react';
 
 const services = [
   {
@@ -25,7 +25,7 @@ const services = [
     delay: 0.2
   },
   {
-    icon: Share2,
+    icon: Figma,
     title: 'Diseño de Interfaces (UI/UX)',
     description: 'Diseño centrado en la experiencia del usuario para apps y plataformas digitales.',
     gradient: 'from-reinbou-sky to-reinbou-coral',
