@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Palette, Globe, FileText, Figma } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Asegúrate de usar esto si usas React Router
 
 const services = [
   {
@@ -8,28 +9,32 @@ const services = [
     title: 'Branding & Diseño de Marca',
     description: 'Servicios enfocados en crear o renovar la identidad visual de una marca.',
     gradient: 'from-reinbou-coral to-reinbou-peach',
-    delay: 0
+    delay: 0,
+    href: '/servicios'
   },
   {
     icon: Globe,
     title: 'Diseño Web Personalizado',
     description: 'Sitios web modernos, responsivos y optimizados que convierten visitantes en clientes.',
     gradient: 'from-reinbou-navy to-reinbou-sky',
-    delay: 0.1
+    delay: 0.1,
+    href: '/servicios'
   },
   {
     icon: FileText,
     title: 'Plantillas Editables',
     description: 'Diseños profesionales y personalizables para que puedas mantener tu marca consistente.',
     gradient: 'from-reinbou-yellow to-reinbou-peach',
-    delay: 0.2
+    delay: 0.2,
+    href: '/servicios'
   },
   {
     icon: Figma,
     title: 'Diseño de Interfaces (UI/UX)',
     description: 'Diseño centrado en la experiencia del usuario para apps y plataformas digitales.',
     gradient: 'from-reinbou-sky to-reinbou-coral',
-    delay: 0.3
+    delay: 0.3,
+    href: '/servicios'
   }
 ];
 
@@ -57,26 +62,27 @@ export default function Services() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: service.delay }}
-              className="group"
-            >
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 
-                transform hover:-translate-y-2 h-full">
-                <div className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-r ${service.gradient} p-4 
-                  transform group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-full h-full text-white" />
+          {services.map((service) => (
+            <Link to={service.href} key={service.title}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: service.delay }}
+                className="group"
+              >
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 
+                  transform hover:-translate-y-2 h-full">
+                  <div className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-r ${service.gradient} p-4 
+                    transform group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-reinbou-navy mb-4">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-reinbou-navy mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
