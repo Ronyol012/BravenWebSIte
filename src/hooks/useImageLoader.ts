@@ -104,4 +104,4 @@ export function useImageLoader(
     reload,
     isRetrying: currentAttempt > 0
   };
-}</parameter>
+}
