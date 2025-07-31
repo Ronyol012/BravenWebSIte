@@ -136,4 +136,4 @@ export async function fetchFeaturedProjectsWithValidation() {
     console.error('❌ Error fetching featured projects:', error);
     throw error;
   }
-}</parameter>
+}
