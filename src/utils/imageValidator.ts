@@ -148,4 +148,4 @@ export class ImageValidator {
 
     return { successful, failed };
   }
-}</parameter>
+}
