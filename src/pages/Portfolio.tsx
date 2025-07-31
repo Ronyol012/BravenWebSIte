@@ -37,19 +37,21 @@ export default function Portfolio() {
   }, [projects, activeCategory]);
 
   const fetchProjects = async () => {
-    try {
-      console.log('Fetching projects...');
-      setError(null);
-      const validatedProjects = await fetchProjectsWithValidation();
-      
-      setProjects(validatedProjects);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-      setError('Error al cargar los proyectos');
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    console.log('Fetching projects...');
+    setError(null);
+    const validatedProjects = await fetchProjectsWithValidation();
+
+    setProjects(validatedProjects);
+    setFilteredProjects(validatedProjects); // ← aquí aplicamos el filtro directo
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    setError('Error al cargar los proyectos');
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const filterProjects = () => {
     if (activeCategory === 'all') {
