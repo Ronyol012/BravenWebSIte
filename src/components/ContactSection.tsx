@@ -51,7 +51,7 @@ export default function ContactSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-reinbou-navy mb-2">
                   Nombre
