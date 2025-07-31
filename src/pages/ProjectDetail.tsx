@@ -36,6 +36,7 @@ export default function ProjectDetail() {
       if (error) {
         if (error.code === 'PGRST116') {
           setError('Proyecto no encontrado');
+          setLoading(false);
         } else {
           throw error;
         }
@@ -43,10 +44,10 @@ export default function ProjectDetail() {
       }
 
       setProject(data);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching project:', error);
       setError('Error al cargar el proyecto');
-    } finally {
       setLoading(false);
     }
   };
