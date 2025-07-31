@@ -1,0 +1,11 @@
+# Netlify redirects for React Router SPA
+# This file is essential for client-side routing to work properly
+
+# Redirect all routes to index.html for React Router to handle
+/*    /index.html   200
+
+# API routes (if you have any backend endpoints)
+# /api/*  https://your-api-domain.com/api/:splat  200
+
+# Redirect old URLs (example)
+# /old-page  /new-page  301
