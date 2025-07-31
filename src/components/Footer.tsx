@@ -29,7 +29,14 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-3xl font-display font-bold mb-4">Reinbou</h3>
+             <h3 className="text-3xl font-display font-bold mb-4">Reinbou</h3>
+               <motion.img
+                src="/data/sublogo.svg"
+                alt="Reinbou logo"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="h-10 w-auto cursor-pointer transition-opacity"
+              />
               <p className="text-gray-300 mb-6 max-w-md">
                 Agencia creativa especializada en diseño con intención. 
                 Transformamos ideas en experiencias visuales memorables.
