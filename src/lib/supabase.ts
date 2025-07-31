@@ -53,10 +53,9 @@ export async function testDatabaseConnection(): Promise<{
     console.log('🔍 Testing Supabase connection...');
     
     // Test basic connectivity
-    const { data, error } = await supabase
+    const { count, error } = await supabase
       .from('proyectos')
-      .select('count(*)')
-      .limit(1);
+      .select('*', { count: 'exact', head: true });
 
     if (error) {
       console.error('❌ Database connection failed:', error);
@@ -70,8 +69,8 @@ export async function testDatabaseConnection(): Promise<{
     console.log('✅ Database connection successful');
     return {
       success: true,
-      message: 'Database connection established successfully',
-      details: data
+      message: `Database connection established successfully. Found ${count || 0} projects.`,
+      details: { count }
     };
   } catch (error) {
     console.error('❌ Connection test error:', error);
