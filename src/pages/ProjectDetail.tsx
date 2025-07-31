@@ -40,7 +40,6 @@ export default function ProjectDetail() {
           throw error;
         }
         return;
-      }
 
       setProject(data);
     } catch (error) {

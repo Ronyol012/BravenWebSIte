@@ -30,6 +30,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
              
+            <div>
                <motion.img
                 src="/data/Reinboublanco.svg"
                 alt="Reinbou logo blanco"
@@ -37,6 +38,7 @@ export default function Footer() {
                 animate={{ opacity: 1, x: 0 }}
                 className="h-9 w-auto cursor-pointer transition-opacity"
               />
+            </div>
               <p className="text-gray-300 mb-6 max-w-md">
                 Agencia creativa especializada en diseño con intención. 
                 Transformamos ideas en experiencias visuales memorables.

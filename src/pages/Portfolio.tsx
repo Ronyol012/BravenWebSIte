@@ -75,7 +75,6 @@ export default function Portfolio() {
 
     // Navigate using React Router - this ensures proper SPA behavior
     navigate(`/proyecto/${project.slug}`, { 
-      // React Router v7 compatible options
       replace: false,
       state: { projectName: project.nombre }
     });

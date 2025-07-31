@@ -42,6 +42,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
+          <div>
             <Link to="/" onClick={handleNavClick}>
               <motion.img
                 src="/data/sublogo.svg"
@@ -51,6 +52,7 @@ export default function Navbar() {
                 className="h-10 w-auto cursor-pointer transition-opacity"
               />
             </Link>
+          </div>
 
 
           {/* Desktop Menu */}
