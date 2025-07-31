@@ -5,14 +5,14 @@ import { Palette, Globe, FileText, Share2 } from 'lucide-react';
 const services = [
   {
     icon: Palette,
-    title: 'Branding',
-    description: 'Identidades visuales completas que reflejan la esencia de tu marca y conectan con tu audiencia.',
+    title: 'Branding & Diseño de Marca',
+    description: 'Servicios enfocados en crear o renovar la identidad visual de una marca.',
     gradient: 'from-reinbou-coral to-reinbou-peach',
     delay: 0
   },
   {
     icon: Globe,
-    title: 'Diseño Web',
+    title: 'Diseño Web Personalizado',
     description: 'Sitios web modernos, responsivos y optimizados que convierten visitantes en clientes.',
     gradient: 'from-reinbou-navy to-reinbou-sky',
     delay: 0.1
@@ -26,8 +26,8 @@ const services = [
   },
   {
     icon: Share2,
-    title: 'Diseño para Redes Sociales',
-    description: 'Contenido visual impactante que aumenta tu engagement y fortalece tu presencia digital.',
+    title: 'Diseño de Interfaces (UI/UX)',
+    description: 'Diseño centrado en la experiencia del usuario para apps y plataformas digitales.',
     gradient: 'from-reinbou-sky to-reinbou-coral',
     delay: 0.3
   }
