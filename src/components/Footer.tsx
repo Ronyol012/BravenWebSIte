@@ -29,33 +29,28 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Link to="/" onClick={handleNavClick}>
-              <motion.img
-                src="/data/sublogo.svg"
-                alt="Reinbou logo"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="h-10 w-auto cursor-pointer transition-opacity"
-              />
-            </Link>
+              <h3 className="text-3xl font-display font-bold mb-4">Reinbou</h3>
               <p className="text-gray-300 mb-6 max-w-md">
                 Agencia creativa especializada en diseño con intención. 
                 Transformamos ideas en experiencias visuales memorables.
               </p>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center
-                      hover:bg-reinbou-coral transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <motion.a
+                      key={social.label}
+                      href={social.href}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center
+                        hover:bg-reinbou-coral transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      <Icon className="w-5 h-5 text-white" />
+                    </motion.a>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
