@@ -29,9 +29,9 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-             <h3 className="text-3xl font-display font-bold mb-4">Reinbou</h3>
+             <h3 className="text-3xl font-display font-bold mb-3">Reinbou</h3>
                <motion.img
-                src="/data/sublogo.svg"
+                src="/data/Reinboublanco.svg"
                 alt="Reinbou logo blanco"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
