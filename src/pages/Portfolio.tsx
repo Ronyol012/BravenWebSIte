@@ -185,6 +185,7 @@ export default function Portfolio() {
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
           <motion.div
+            key={activeCategory} // 🔧 Este es el fix
             layout
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
