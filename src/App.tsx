@@ -38,6 +38,22 @@ function App() {
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/proyecto/:slug" element={<ProjectDetail />} />
                 <Route path="/contacto" element={<Contact />} />
+                <Route path="/database-test" element={
+                  import.meta.env.DEV ? (
+                    React.lazy(() => import('./pages/DatabaseTest'))
+                  ) : (
+                    <div className="min-h-screen pt-32 flex items-center justify-center">
+                      <div className="text-center">
+                        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+                          Database Test - Development Only
+                        </h1>
+                        <p className="text-gray-600">
+                          This page is only available in development mode.
+                        </p>
+                      </div>
+                    </div>
+                  )
+                } />
                 <Route path="*" element={
                   <div className="min-h-screen pt-32 flex items-center justify-center">
                     <div className="text-center">
