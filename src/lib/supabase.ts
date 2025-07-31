@@ -298,20 +298,20 @@ export async function fetchProjectBySlug(slug: string): Promise<Proyecto | null>
 export function setupConnectionMonitoring() {
   // Monitor connection status
   supabase.auth.onAuthStateChange((event, session) => {
-    console.log('🔐 Auth state changed:', event);
+    console.log('Auth state changed:', event);
     if (event === 'SIGNED_OUT') {
-      console.log('👋 User signed out');
+      console.log('User signed out');
     } else if (event === 'SIGNED_IN') {
-      console.log('👋 User signed in');
+      console.log('User signed in');
     }
   });
 
   // Test connection periodically in development
-  if (import.meta.env.DEV) {
+  if (process.env.NODE_ENV === 'development') {
     setInterval(async () => {
       const result = await testDatabaseConnection();
       if (!result.success) {
-        console.warn('⚠️ Periodic connection check failed:', result.message);
+        console.warn('Periodic connection check failed:', result.message);
       }
     }, 300000); // Every 5 minutes
   }

@@ -58,7 +58,7 @@ export default function DatabaseStatus({ showDetails = false }: DatabaseStatusPr
     checkConnection();
     
     // Check connection every 30 seconds in development
-    if (import.meta.env.DEV) {
+    if (process.env.NODE_ENV === 'development') {
       const interval = setInterval(checkConnection, 30000);
       return () => clearInterval(interval);
     }

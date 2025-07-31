@@ -24,22 +24,13 @@ class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error details
-    console.error('🚨 Error Boundary caught an error:', error);
-    console.error('🚨 Error Info:', errorInfo);
+    console.error('Error Boundary caught an error:', error);
+    console.error('Error Info:', errorInfo);
     
     this.setState({
       error,
       errorInfo
     });
-
-    // You can also log the error to an error reporting service here
-    if (import.meta.env.DEV) {
-      // In development, show detailed error info
-      console.group('🔍 Error Boundary Details');
-      console.error('Error:', error);
-      console.error('Component Stack:', errorInfo.componentStack);
-      console.groupEnd();
-    }
   }
 
   render() {
@@ -67,7 +58,7 @@ class ErrorBoundary extends Component<Props, State> {
               Ha ocurrido un error inesperado. Por favor, recarga la página o contacta al soporte.
             </p>
 
-            {import.meta.env.DEV && this.state.error && (
+            {process.env.NODE_ENV === 'development' && this.state.error && (
               <details className="text-left bg-gray-100 rounded p-4 mb-4">
                 <summary className="cursor-pointer font-medium text-red-600 mb-2">
                   Detalles del error (desarrollo)

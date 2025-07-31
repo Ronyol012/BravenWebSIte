@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -9,6 +9,9 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingFallback from './components/LoadingFallback';
+
+// Lazy load DatabaseTest component for development
+const DatabaseTest = lazy(() => import('./pages/DatabaseTest'));
 
 function App() {
   // Scroll to top on route change
@@ -38,22 +41,9 @@ function App() {
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/proyecto/:slug" element={<ProjectDetail />} />
                 <Route path="/contacto" element={<Contact />} />
-                <Route path="/database-test" element={
-                  import.meta.env.DEV ? (
-                    React.lazy(() => import('./pages/DatabaseTest'))
-                  ) : (
-                    <div className="min-h-screen pt-32 flex items-center justify-center">
-                      <div className="text-center">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-4">
-                          Database Test - Development Only
-                        </h1>
-                        <p className="text-gray-600">
-                          This page is only available in development mode.
-                        </p>
-                      </div>
-                    </div>
-                  )
-                } />
+                {import.meta.env.DEV && (
+                  <Route path="/database-test" element={<DatabaseTest />} />
+                )}
                 <Route path="*" element={
                   <div className="min-h-screen pt-32 flex items-center justify-center">
                     <div className="text-center">
