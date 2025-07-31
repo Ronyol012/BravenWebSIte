@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Tag, Globe, Github } from 'lucide-react';
 import { supabase, Proyecto } from '../lib/supabase';
-import ImageWithFallback from '../components/ImageWithFallback';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -188,11 +188,12 @@ export default function ProjectDetail() {
               className="mb-12"
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-video">
-                <ImageWithFallback
+                <OptimizedImage
                   src={project.imagen_url}
                   alt={project.nombre}
                   className="w-full h-full object-cover"
                   fallbackClassName="w-full h-full"
+                  onError={(error) => console.error(`Project detail image error:`, error)}
                 />
               </div>
             </motion.div>
@@ -209,11 +210,12 @@ export default function ProjectDetail() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {project.galeria.map((imageUrl, index) => (
                     <div key={index} className="relative overflow-hidden rounded-xl aspect-video">
-                      <ImageWithFallback
+                      <OptimizedImage
                         src={imageUrl}
                         alt={`${project.nombre} - Imagen ${index + 1}`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         fallbackClassName="w-full h-full"
+                        onError={(error) => console.error(`Gallery image error:`, error)}
                       />
                     </div>
                   ))}

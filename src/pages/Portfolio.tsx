@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { ArrowUpRight, Filter } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase, Proyecto } from '../lib/supabase';
-import ImageWithFallback from '../components/ImageWithFallback';
-import { useImageCache } from '../hooks/useImageCache';
+import OptimizedImage from '../components/OptimizedImage';
+import { fetchProjectsWithValidation } from '../lib/supabase';
 
 const categories = [
   { key: 'all', label: 'Todos' },
@@ -27,13 +27,6 @@ export default function Portfolio() {
 
   console.log('Portfolio component rendered');
 
-  // Extract image URLs for caching
-  const imageUrls = projects
-    .map(project => project.imagen_url)
-    .filter((url): url is string => Boolean(url));
-  
-  const { loadingStates } = useImageCache(imageUrls);
-
   useEffect(() => {
     console.log('Portfolio useEffect triggered');
     fetchProjects();
@@ -47,26 +40,7 @@ export default function Portfolio() {
     try {
       console.log('Fetching projects...');
       setError(null);
-      const { data, error } = await supabase
-        .from('proyectos')
-        .select('*')
-        .eq('activo', true)
-        .order('orden', { ascending: true });
-
-      if (error) {
-        console.error('Supabase error:', error);
-        throw error;
-      }
-      
-      console.log('Projects fetched:', data?.length || 0);
-      
-      // Validate image URLs
-      const validatedProjects = (data || []).map(project => ({
-        ...project,
-        imagen_url: project.imagen_url && isValidUrl(project.imagen_url) 
-          ? project.imagen_url 
-          : undefined
-      }));
+      const validatedProjects = await fetchProjectsWithValidation();
       
       setProjects(validatedProjects);
     } catch (error) {
@@ -74,15 +48,6 @@ export default function Portfolio() {
       setError('Error al cargar los proyectos');
     } finally {
       setLoading(false);
-    }
-  };
-
-  const isValidUrl = (string: string): boolean => {
-    try {
-      const url = new URL(string);
-      return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch {
-      return false;
     }
   };
 
@@ -247,11 +212,12 @@ export default function Portfolio() {
                   }}
                 >
                   <div className="relative overflow-hidden aspect-video">
-                    <ImageWithFallback
+                    <OptimizedImage
                       src={project.imagen_url}
                       alt={project.nombre}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       fallbackClassName="w-full h-full"
+                      onError={(error) => console.error(`Image error for ${project.nombre}:`, error)}
                     />
                     <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full 
                       flex items-center justify-center opacity-0 group-hover:opacity-100 
