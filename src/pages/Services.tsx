@@ -13,18 +13,18 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+// Listado de los servicios, alimenta el bucle
 const services = [
   {
     icon: Palette,
-    title: 'Branding & Identidad Visual',
-    description: 'Creamos identidades visuales completas que reflejan la esencia de tu marca y conectan emocionalmente con tu audiencia.',
+    title: 'Branding & Diseño de Marca',
+    description: 'Servicios enfocados en crear o renovar la identidad visual de una marca.',
     features: [
-      'Diseño de logotipo',
-      'Manual de marca',
-      'Paleta de colores',
-      'Tipografías corporativas',
-      'Aplicaciones de marca'
+      'Diseño de logo profesional',
+      'Paleta de colores personalizada',
+      'Selección de tipografías estratégicas',
+      'Manual de marca básico',
+      'Moodboard y concepto visual', 
     ],
     gradient: 'from-reinbou-coral to-reinbou-peach',
     price: 'Desde $800',
