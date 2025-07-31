@@ -10,7 +10,7 @@ export default defineConfig({
     port: 5173,
     host: true,
     // Essential for React Router - enables client-side routing in development
-    historyApiFallback: true,
+    //historyApiFallback: true,
   },
   
   // Build configuration for production
@@ -37,7 +37,7 @@ export default defineConfig({
     port: 4173,
     host: true,
     // Essential for React Router - enables client-side routing in preview
-    historyApiFallback: true,
+    //historyApiFallback: true,
   },
   
   // Dependency optimization
