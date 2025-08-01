@@ -31,7 +31,6 @@ export default function Contact() {
     'Diseño Web',
     'Plantillas Editables',
     'Diseño para Redes Sociales',
-    'Fotografía',
     'Consultoría Creativa'
   ];
 
