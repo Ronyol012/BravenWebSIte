@@ -17,29 +17,28 @@ import { useNavigate } from 'react-router-dom';
 const services = [
   {
     icon: Palette,
-    title: 'Branding & Diseño de Marca',
-    description: 'Servicios enfocados en crear o renovar la identidad visual de una marca.',
+    title: 'Branding e Identidad Visual',
+    description: 'Creamos marcas que comunican y conectan.',
     features: [
-      'Diseño de logo profesional',
-      'Paleta de colores personalizada',
-      'Selección de tipografías estratégicas',
-      'Manual de marca básico',
-      'Moodboard y concepto visual', 
+      'Identidad visual básica',
+      'Identidad visual completa',
+      'Rediseño de marca',
+      'Asesoría de marca',
+      'Auditoría visual de Instagram', 
     ],
     gradient: 'from-reinbou-coral to-reinbou-peach',
-    price: 'Desde $800',
+    price: '',
     popular: false
   },
   {
     icon: Globe,
-    title: 'Diseño Web',
-    description: 'Sitios web modernos, responsivos y optimizados que convierten visitantes en clientes y potencian tu presencia digital.',
+    title: 'Diseño Web y Experiencia Digital',
+    description: 'Tu casa digital, diseñada con intención.',
     features: [
-      'Diseño responsive',
-      'Optimización SEO',
-      'Velocidad de carga',
-      'UX/UI profesional',
-      'Integración CMS'
+      'Landing page profesional',
+      'Página web institucional',
+      'Web con catálogo visual',
+      'Diseño UX/UI profesional'
     ],
     gradient: 'from-reinbou-navy to-reinbou-sky',
     price: 'Desde $1,200',
