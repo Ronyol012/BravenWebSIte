@@ -71,32 +71,16 @@ const services = [
   },
   {
     icon: Share2,
-    title: 'Diseño para Redes Sociales',
-    description: 'Contenido visual impactante que aumenta tu engagement y fortalece tu presencia en redes sociales.',
+    title: 'Combos y Paquetes Inteligentes',
+    description: 'Soluciones completas listas para comenzar.',
     features: [
-      'Posts para Instagram/Facebook',
-      'Stories animadas',
-      'Covers para perfiles',
-      'Contenido para LinkedIn',
-      'Calendarios de contenido'
+      'Branding Express',
+      'Marca + Instagram Pro',
+      'Web + Branding',
+      'Digital Kit para vender más'
     ],
     gradient: 'from-reinbou-peach to-reinbou-yellow',
-    price: 'Desde $400',
-    popular: false
-  },
-  {
-    icon: Camera,
-    title: 'Fotografía Profesional',
-    description: 'Sesiones fotográficas profesionales para productos, corporativas y eventos que elevan la imagen de tu marca.',
-    features: [
-      'Fotografía de producto',
-      'Retratos corporativos',
-      'Fotografía de eventos',
-      'Edición profesional',
-      'Entrega en alta resolución'
-    ],
-    gradient: 'from-reinbou-coral to-reinbou-navy',
-    price: 'Desde $600',
+    price: '',
     popular: false
   }
 ];
