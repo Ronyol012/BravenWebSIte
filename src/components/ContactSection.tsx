@@ -25,7 +25,7 @@ export default function ContactSection() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Hola! Me interesa conocer más sobre los servicios de Reinbou.');
-    window.open(`https://wa.me/5215512345678?text=${message}`, '_blank');
+    window.open(`https://wa.me/8298052619?text=${message}`, '_blank');
   };
 
   return (
