@@ -126,7 +126,7 @@ export default function Services() {
         </motion.div>
 
         {/* Main Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-22">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -256,6 +256,7 @@ export default function Services() {
                 className="bg-white text-reinbou-navy px-8 py-4 rounded-lg font-medium
                   hover:bg-gray-100 transition-all duration-300"
               >
+                </span>
                 Solicitar Cotización
               </motion.button>
             </Link>
