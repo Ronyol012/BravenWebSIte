@@ -14,7 +14,7 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Instagram,
-     href: '#',
+     href: 'https://www.instagram.com/reinbourd?igsh=cTFtdTRreXZwOGU=',
      label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Linkedin, href: '#', label: 'Linkedin' }
