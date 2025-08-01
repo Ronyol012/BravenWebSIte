@@ -59,17 +59,14 @@ const services = [
   },
   {
     icon: FileText,
-    title: 'Plantillas Editables',
-    description: 'Diseños profesionales y personalizables para que puedas mantener tu marca consistente en todos tus materiales.',
+    title: 'Consultorías y Mentorías Creativas',
+    description: 'Acompañamiento estratégico personalizado.',
     features: [
-      'Plantillas para redes sociales',
-      'Presentaciones corporativas',
-      'Materiales de marketing',
-      'Documentos empresariales',
-      'Formatos editables'
+      'Asesorías 1:1',
+      'Mentoría creativa para freelancers y marcas'
     ],
     gradient: 'from-reinbou-sky to-reinbou-coral',
-    price: 'Desde $300',
+    price: '',
     popular: false
   },
   {
