@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Mail, Phone, linkedin } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: linkedin, href: '#', label: 'linkedin' }
+    { icon: Linkedin, href: '#', label: 'Linkedin' }
   ];
 
   return (
