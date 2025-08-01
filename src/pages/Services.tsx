@@ -41,22 +41,20 @@ const services = [
       'Diseño UX/UI profesional'
     ],
     gradient: 'from-reinbou-navy to-reinbou-sky',
-    price: 'Desde $1,200',
-    popular: true
+    price: '',
+    popular: false
   },
   {
     icon: ShoppingCart,
-    title: 'E-commerce',
-    description: 'Tiendas online completas con diseño atractivo y funcionalidades avanzadas para maximizar tus ventas.',
+    title: 'Plantillas y Recursos Editables',
+    description: 'Herramientas listas para usar y destacar.',
     features: [
-      'Catálogo de productos',
-      'Carrito de compras',
-      'Pasarelas de pago',
-      'Panel administrativo',
-      'Inventario automático'
+      'Pack de plantillas para Instagram (básico y pro)',
+      'Plantillas educativas (ebooks, PPT).',
+      'Plantillas empresariales (brochures, cotizadores, portafolios)'
     ],
     gradient: 'from-reinbou-yellow to-reinbou-peach',
-    price: 'Desde $2,000',
+    price: '',
     popular: false
   },
   {
