@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, linkedin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
+    { icon: linkedin, href: '#', label: 'linkedin' }
   ];
 
   return (
@@ -97,11 +97,11 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-reinbou-coral" />
-                  <span className="text-gray-300">hola@reinbou.com</span>
+                  <span className="text-gray-300">reinbourd@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-reinbou-coral" />
-                  <span className="text-gray-300">+1 (555) 123-4567</span>
+                  <span className="text-gray-300">+1 (829) 805-2619</span>
                 </div>
               </div>
             </motion.div>
