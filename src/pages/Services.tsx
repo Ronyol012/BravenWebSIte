@@ -256,7 +256,6 @@ export default function Services() {
                 className="bg-white text-reinbou-navy px-8 py-4 rounded-lg font-medium
                   hover:bg-gray-100 transition-all duration-300"
               >
-                <span>
                 Solicitar Cotización
               </motion.button>
             </Link>
