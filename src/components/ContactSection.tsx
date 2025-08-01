@@ -56,7 +56,7 @@ export default function ContactSection() {
   className="space-y-6" 
   data-netlify="true" 
   netlify-honeypot="bot-field"
-  name="contacto"
+  name="contacto-home"
   netlify
 >
   {/* Campo oculto para honeypot anti-spam */}
