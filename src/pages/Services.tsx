@@ -81,7 +81,7 @@ const services = [
     ],
     gradient: 'from-reinbou-peach to-reinbou-yellow',
     price: '',
-    popular: true
+    popular: false
   }
 ];
 
