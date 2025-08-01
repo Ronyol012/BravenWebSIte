@@ -72,7 +72,7 @@ export default function Contact() {
                 Cuéntanos sobre tu proyecto
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" name="contacto-page" netlify>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-reinbou-navy mb-2">
