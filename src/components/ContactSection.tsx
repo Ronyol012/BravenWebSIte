@@ -57,6 +57,7 @@ export default function ContactSection() {
   data-netlify="true" 
   netlify-honeypot="bot-field"
   name="contacto"
+  netlify
 >
   {/* Campo oculto para honeypot anti-spam */}
   <input type="hidden" name="form-name" value="contacto" />
