@@ -224,21 +224,21 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-reinbou-coral mt-1" />
                   <div>
                     <p className="font-medium text-reinbou-navy">Email</p>
-                    <p className="text-gray-600">hola@reinbou.com</p>
+                    <p className="text-gray-600">reinbourd@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Phone className="w-5 h-5 text-reinbou-coral mt-1" />
                   <div>
                     <p className="font-medium text-reinbou-navy">Teléfono</p>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+1 (829) 805-2619</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-reinbou-coral mt-1" />
                   <div>
                     <p className="font-medium text-reinbou-navy">Ubicación</p>
-                    <p className="text-gray-600">Ciudad de México, México</p>
+                    <p className="text-gray-600">Santo Domingo, República Dominicana</p>
                   </div>
                 </div>
               </div>
