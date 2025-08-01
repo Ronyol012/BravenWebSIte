@@ -16,8 +16,12 @@ export default function Footer() {
     { icon: Instagram,
      href: 'https://www.instagram.com/reinbourd/',
      label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Linkedin, href: '#', label: 'Linkedin' }
+    { icon: Facebook,
+     href: '#',
+     label: 'Facebook' },
+    { icon: Linkedin,
+     href: 'https://www.linkedin.com/company/reinbou-transformamos-marcas-y-potenciamos-su-presencial-digital',
+     label: 'Linkedin' }
   ];
 
   return (
