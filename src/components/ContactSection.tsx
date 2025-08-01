@@ -51,66 +51,84 @@ export default function ContactSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-reinbou-navy mb-2">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
-                    focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
-                  placeholder="Tu nombre"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-reinbou-navy mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
-                    focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
-                  placeholder="tu@email.com"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-reinbou-navy mb-2">
-                  Mensaje
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
-                    focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
-                  placeholder="Cuéntanos sobre tu proyecto..."
-                  required
-                />
-              </div>
+            <form 
+  onSubmit={handleSubmit} 
+  className="space-y-6" 
+  data-netlify="true" 
+  netlify-honeypot="bot-field"
+  name="contacto"
+>
+  {/* Campo oculto para honeypot anti-spam */}
+  <input type="hidden" name="form-name" value="contacto" />
+  <p className="hidden">
+    <label>
+      No llenar este campo: <input name="bot-field" />
+    </label>
+  </p>
 
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-reinbou-coral text-white px-8 py-4 rounded-lg font-medium
-                  hover:bg-reinbou-navy transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <Send className="w-5 h-5" />
-                <span>Enviar Mensaje</span>
-              </motion.button>
-            </form>
+  <div>
+    <label htmlFor="name" className="block text-sm font-medium text-reinbou-navy mb-2">
+      Nombre
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
+        focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
+      placeholder="Tu nombre"
+      required
+    />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block text-sm font-medium text-reinbou-navy mb-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value={formData.email}
+      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
+        focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
+      placeholder="tu@email.com"
+      required
+    />
+  </div>
+
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium text-reinbou-navy mb-2">
+      Mensaje
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows={5}
+      value={formData.message}
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 
+        focus:ring-reinbou-coral focus:border-transparent transition-all duration-300"
+      placeholder="Cuéntanos sobre tu proyecto..."
+      required
+    />
+  </div>
+
+  <motion.button
+    type="submit"
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    className="w-full bg-reinbou-coral text-white px-8 py-4 rounded-lg font-medium
+      hover:bg-reinbou-navy transition-all duration-300 flex items-center justify-center space-x-2"
+  >
+    <Send className="w-5 h-5" />
+    <span>Enviar Mensaje</span>
+  </motion.button>
+</form>
+
           </motion.div>
 
           <motion.div
