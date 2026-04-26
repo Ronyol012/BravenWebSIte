@@ -1,7 +1,7 @@
 # Braven Studio — Notas del proyecto
 
 ## Repositorio Git
-- **Remote origin:** https://github.com/Ronyol012/ReinbouWeb.git
+- **Remote origin:** https://github.com/Ronyol012/BravenWebSIte.git
 - **Rama principal:** main
 - Este proyecto SIEMPRE apunta a ese repositorio. No cambiar a BravenOS ni otro repo.
 
