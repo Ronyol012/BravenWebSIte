@@ -6,7 +6,7 @@
  * usuario puede agregar a cada plan.
  */
 
-import { PRECIOS, MANTENIMIENTO } from './config.js';
+import { PRECIOS, PRECIOS_LANZAMIENTO, MANTENIMIENTO, MANTENIMIENTO_TEXTO } from './config.js';
 import { formatearPrecio, iconCheck, lucideIcon } from './utils.js';
 import { getMoneda } from './currency.js';
 
@@ -24,7 +24,7 @@ export function renderPricing(contenido) {
   contenido.planes.forEach(plan => {
     /* Badge de "más vendido" solo en el plan destacado */
     const badge = plan.destacado
-      ? `<div class="plan__top-badge">${plan.badge} ✦</div>`
+      ? `<div class="plan__top-badge">${contenido.prOferta} ✦</div>`
       : '';
 
     /* Lista de features con ícono de check */
@@ -43,6 +43,19 @@ export function renderPricing(contenido) {
       </span>`;
     }).join('');
 
+    /* Precio: si hay oferta de lanzamiento, muestra la de lista tachada */
+    const lanzamiento = PRECIOS_LANZAMIENTO[plan.id];
+    const precioHTML = lanzamiento
+      ? `<div class="plan__precio-lista">${formatearPrecio(PRECIOS[plan.id], moneda)}</div>
+         <div class="plan__precio">${formatearPrecio(lanzamiento, moneda)}</div>
+         <div class="plan__cupos">${contenido.prCupos}</div>`
+      : `<div class="plan__precio">${formatearPrecio(PRECIOS[plan.id], moneda)}</div>`;
+
+    /* Mantenimiento: monto mensual o texto (plan Profesional) */
+    const mantenimiento = MANTENIMIENTO_TEXTO[plan.id]
+      ? MANTENIMIENTO_TEXTO[plan.id]
+      : `${formatearPrecio(MANTENIMIENTO[plan.id], moneda)}${contenido.prMes}`;
+
     /* Clase del botón según si es plan destacado o no */
     const claseBtn = plan.destacado ? 'plan__btn--destacado' : 'plan__btn';
 
@@ -54,7 +67,7 @@ export function renderPricing(contenido) {
           <div class="plan__nombre">${plan.nombre}</div>
           <div class="plan__badge">${plan.badge}</div>
         </div>
-        <div class="plan__precio">${formatearPrecio(PRECIOS[plan.id], moneda)}</div>
+        ${precioHTML}
         <div class="plan__meta">
           <div class="plan__meta-fila">
             <span class="plan__meta-label">${contenido.prEntrega}</span>
@@ -62,7 +75,7 @@ export function renderPricing(contenido) {
           </div>
           <div class="plan__meta-fila">
             <span class="plan__meta-label">${contenido.prMant}</span>
-            <span class="plan__meta-valor">${formatearPrecio(MANTENIMIENTO[plan.id], moneda)}/mo</span>
+            <span class="plan__meta-valor">${mantenimiento}</span>
           </div>
         </div>
         <div class="plan__divisor"></div>

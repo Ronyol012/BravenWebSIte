@@ -5,7 +5,7 @@
  * El usuario elige una opción por pregunta y avanza automáticamente.
  */
 
-import { PRECIOS } from './config.js';
+import { PRECIOS, PRECIOS_LANZAMIENTO } from './config.js';
 import { formatearPrecio, iconCheck, lucideIcon } from './utils.js';
 import { getMoneda } from './currency.js';
 
@@ -106,7 +106,9 @@ function mostrarResultado(contenido) {
       </button>
     </div>
     <div class="quiz__res-tarjeta">
-      <div class="quiz__res-precio">${formatearPrecio(PRECIOS[planId], moneda)}</div>
+      <div class="quiz__res-precio">${PRECIOS_LANZAMIENTO[planId]
+        ? `<s style="font-size:.5em;opacity:.5;font-weight:600">${formatearPrecio(PRECIOS[planId], moneda)}</s> ${formatearPrecio(PRECIOS_LANZAMIENTO[planId], moneda)}`
+        : formatearPrecio(PRECIOS[planId], moneda)}</div>
       <div class="quiz__res-entrega">${contenido.prEntrega}: ${plan.entrega}</div>
       <ul class="quiz__res-features">${features}</ul>
     </div>`;

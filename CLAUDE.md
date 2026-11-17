@@ -23,8 +23,12 @@
 - `scripts/main.js` — punto de entrada, cache buster en import de content.js
 - `styles/components.css` — estilos de componentes
 
-## Precios actuales (DOP)
-- BRV-01: 11,000 | BRV-02: 15,000 | BRV-03: 25,000 | BRV-04: 38,000
+## Precios actuales (DOP) — actualizados 16 nov 2026
+- Lista: BRV-01: 20,000 | BRV-02: 24,000 | BRV-03: 42,000 | BRV-04: 70,000
+- Lanzamiento: BRV-01 a 15,000 (3 cupos). Se controla en `PRECIOS_LANZAMIENTO` de `scripts/config.js`.
+- Mantenimiento: Esencial 2,800/mes (BRV-01 a 03), Profesional US$100–150/mes (BRV-04).
+- Ya no se promete plazo de entrega: se habla de seguimiento del proceso en una plataforma.
+- Fuente de verdad: `../Servicios/Planes_Web_Braven.md` y `../Servicios/Planes_Mantenimiento_Braven.md`.
 
 ## Proyectos en portafolio
 - 02 · Valentina Cruz (portafolio fotográfico)

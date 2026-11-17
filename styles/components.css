@@ -427,6 +427,25 @@
   line-height: .95;
   margin-bottom: 20px;
 }
+/* Precio de lista tachado + etiqueta de cupos (oferta de lanzamiento) */
+.plan__precio-lista {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-navy-40);
+  text-decoration: line-through;
+  margin-bottom: 6px;
+}
+.plan__cupos {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-navy-40);
+  margin: -12px 0 20px;
+}
+.plan--destacado .plan__precio-lista,
+.plan--destacado .plan__cupos { color: rgba(240,241,240,.55) !important; }
 .plan__meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
 .plan__meta-fila { display: flex; justify-content: space-between; align-items: center; }
 .plan__meta-label { font-size: 12px; color: var(--color-navy-40); }

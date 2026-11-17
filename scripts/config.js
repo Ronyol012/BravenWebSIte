@@ -5,20 +5,32 @@
  * Si cambia un precio, el WA o el dominio → edita aquí.
  */
 
-/* ── Precios de los planes (en DOP) ──────────────────────── */
+/* ── Precios de lista de los planes (en DOP) ─────────────── */
 export const PRECIOS = {
-  'BRV-01': 11000,
-  'BRV-02': 15000,
-  'BRV-03': 25000,
-  'BRV-04': 38000,
+  'BRV-01': 20000,
+  'BRV-02': 24000,
+  'BRV-03': 42000,
+  'BRV-04': 70000,
 };
 
-/* ── Mantenimiento mensual (en DOP) ──────────────────────── */
+/* ── Precio de lanzamiento (en DOP) ──────────────────────────
+ * Los planes que estén aquí muestran el precio de lista tachado
+ * y el de lanzamiento. Si se acaban los cupos, borra la línea
+ * y el sitio vuelve al precio de lista. */
+export const PRECIOS_LANZAMIENTO = {
+  'BRV-01': 15000,
+};
+
+/* ── Mantenimiento mensual recomendado por plan (en DOP) ─────
+ * Esencial = RD$2,800. El Profesional se cotiza en USD según
+ * el sitio, por eso va como texto. */
 export const MANTENIMIENTO = {
-  'BRV-01': 3500,
-  'BRV-02': 3500,
-  'BRV-03': 5000,
-  'BRV-04': 5000,
+  'BRV-01': 2800,
+  'BRV-02': 2800,
+  'BRV-03': 2800,
+};
+export const MANTENIMIENTO_TEXTO = {
+  'BRV-04': 'US$100–150/mes',
 };
 
 /* ── Tasas de conversión (1 DOP = X unidades) ────────────── */
